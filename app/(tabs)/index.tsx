@@ -108,6 +108,7 @@ export default function Index() {
         {/* Search Bar */}
         <SearchBar
           onPress={() => router.push("/search")}
+          placeholder="Search for a movie"
         />
 
 
@@ -117,7 +118,7 @@ export default function Index() {
 
         {/* Latest Movies Section */}
         <View className="mt-10 mb-3 flex-row items-center justify-between gap-5">
-          <Text className="text-lg text-white font-bold ">
+          <Text className="text-xl text-white font-black mb-3">
             Latest Movies
           </Text>
           <Link href="/latest">

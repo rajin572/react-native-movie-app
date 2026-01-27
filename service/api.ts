@@ -28,8 +28,8 @@ export const fetchMovies = async ({
   page: number;
 }): Promise<Movie[]> => {
   const endpoint = query
-    ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
-    : `${TMDB_CONFIG.BASE_URL}/discover/movie?page=${page}`;
+    ? `${TMDB_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}&include_adult=false`
+    : `${TMDB_CONFIG.BASE_URL}/discover/movie?page=${page}&include_adult=false`;
 
   const response = await fetch(endpoint, {
     method: "GET",
@@ -48,7 +48,7 @@ export const fetchlatestMovies = async ({
 }: {
   page: number;
 }): Promise<Movie[]> => {
-  const endpoint = `${TMDB_CONFIG.BASE_URL}/discover/movie?page=${page}&include_adult=true`;
+  const endpoint = `${TMDB_CONFIG.BASE_URL}/discover/movie?page=${page}&include_adult=false`;
   //     --url 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=primary_release_date.asc' \
 
   const response = await fetch(endpoint, {
