@@ -46,7 +46,7 @@ const MovieCard = ({
                 <View className="flex-row items-center justify-between">
 
                     <Text className="text-xs text-white font-bold">
-                        {genreList.find((genre) => genre.id === genre_ids[0])?.name || 'N/A'}
+                        {genre_ids?.length > 0 && genreList.find((genre) => genre.id === genre_ids[0])?.name || 'N/A'}
                     </Text>
                     <Text className="text-[10px] text-light-300">
                         {release_date?.split("-")[0]}

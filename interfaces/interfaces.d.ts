@@ -21,6 +21,7 @@ interface TrendingMovie {
   title: string;
   count: number;
   poster_url: string;
+  $id: string;
 }
 
 interface MovieDetails {
