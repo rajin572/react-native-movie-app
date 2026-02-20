@@ -1,4 +1,5 @@
 import PropularMovies from "@/component/HomePage/PropularMovies";
+import TredingMovie from "@/component/HomePage/TredingMovie";
 import MovieCard from "@/component/MovieCard";
 import SearchBar from "@/component/SearchBar";
 import { icons } from "@/constants/icons";
@@ -113,8 +114,8 @@ export default function Index() {
 
 
         {/* Popular Movies Section */}
+        <TredingMovie />
         <PropularMovies propularMovies={propularMovies || []} loadingPropularMovies={loadingPropularMovies} errorPropularMovies={errorPropularMovies} />
-
 
         {/* Latest Movies Section */}
         <View className="mt-10 mb-3 flex-row items-center justify-between gap-5">

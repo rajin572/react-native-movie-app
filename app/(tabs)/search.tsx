@@ -3,6 +3,7 @@ import SearchBar from '@/component/SearchBar';
 import { icons } from '@/constants/icons';
 import { images } from '@/constants/images';
 import { fetchMovies } from '@/service/api';
+import { updateSearchCount } from '@/service/appwrite';
 import useFetch from '@/service/usefetch';
 import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
@@ -31,7 +32,7 @@ const Search = () => {
 
                 // Call updateSearchCount only if there are results
                 if (movies?.length! > 0 && movies?.[0]) {
-                    // await updateSearchCount(searchQuery, movies[0]);
+                    await updateSearchCount(searchQuery, movies[0]);
                 }
             } else {
                 reset();
@@ -39,7 +40,7 @@ const Search = () => {
         }, 500);
 
         return () => clearTimeout(timeoutId);
-    }, [searchQuery]);
+    }, [searchQuery, movies?.length]);
 
     // Memoized render function
     const renderItem = useCallback(({ item }: { item: Movie }) => (
