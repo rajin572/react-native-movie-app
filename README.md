@@ -99,7 +99,7 @@ export default function Index() {
     </View>
   );
 } -->
-
+##CHeck
 ////////////////////////////////////////////////////////////////////////////////////
 
 import MovieCard from "@/component/MovieCard";
